@@ -1,0 +1,154 @@
+/*
+
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/accueil.png);
+  background-size: cover;
+}
+h1 {
+  display: none;
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: aliceblue;
+}
+
+.navbar .logo {
+  max-width: 150px;
+}
+
+.navbar .nav-links ul {
+  display: flex;
+}
+
+.navbar .nav-links ul li {
+  margin: 25px;
+  color: aliceblue;
+  transition: color 0.3s ease-in-out;
+}
+.navbar .nav-links ul li:hover a {
+  color: aqua;
+  font-weight: 600;
+}
+.navbar .nav-links ul li.active a {
+  color: rgb(6, 77, 77);
+}
+
+.fa-music {
+  display: none;
+  color: goldenrod;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0;
+  }
+
+  .nav-links {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #ffffff67;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .fa-music {
+    display: block;
+  }
+  header {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+/* ajout navigation responsive avec menu burger
+
+
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 900px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+*/
