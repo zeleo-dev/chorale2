@@ -34,7 +34,7 @@
 header {
   height: 100vh;
   width: 100vw;
-  background-image: url(images/accueil.png);
+  background-image: url(images/essai_accueil.png);
   background-size: cover;
 }
 .title {
@@ -45,7 +45,7 @@ h1 {
   top: 250px;
   left: 500px;
   font-size: 2.5rem;
-  color: #e9ebf1;
+  color: #0c3cc9;
 }
 
 .navbar {
@@ -57,7 +57,7 @@ h1 {
 }
 
 .navbar a {
-  color: aliceblue;
+  color: rgb(18, 7, 121);
   font-size: 1.5rem;
 }
 
@@ -81,24 +81,27 @@ h1 {
   transition: color 0.3s ease-in-out;
 }
 .navbar .nav-links ul li:hover a {
-  color: aqua;
+  color: rgb(23, 46, 46);
   font-weight: 600;
 }
 /*page presentation*/
-.presentation {
+body {
   display: flex;
   background-color: #96c2db;
 }
 /*flipcard*/
+
 #text {
-  padding: 10px;
+  margin: 0;
+  padding: 5px;
+  line-height: 15px;
 }
 .container {
   width: 350px;
   height: 520px;
   perspective: 1000px; /* Ajout de perspective pour l'effet 3D */
   position: absolute;
-  top: 500px;
+  top: 650px;
   left: 50px;
 }
 
@@ -154,7 +157,130 @@ h1 {
   cursor: pointer;
   color: aliceblue;
 }
+
+/*wordCloud*/
+#wordCloud {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(173, 147, 147);
+  margin-bottom: 20px;
+}
+#wordCloud h3 {
+  position: absolute;
+  top: 550px;
+  text-align: center;
+  font-size: 2rem;
+  color: #0c3cc9;
+  margin-bottom: 20px;
+}
+.wordCloud {
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  top: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.wordcloud span {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s ease background 0.3s ease;
+}
+
+.big {
+  font-size: 2rem;
+  color: rgb(197, 134, 173);
+  background: rgba(197, 134, 173, 0.2);
+  transform: rotate(-25deg);
+}
+.medium {
+  font-size: 1.5rem;
+  color: rgb(189, 90, 54);
+  background: rgb(189, 90, 54, 0.2);
+  transform: rotate(20deg);
+}
+.small {
+  font-size: 1.2rem;
+  color: rgb(7, 109, 16);
+  background: rgb(7, 109, 16, 0.2);
+  transform: rotate(40deg);
+}
+
+.wordCloud span:hover {
+  transform: scale(1.1);
+}
+/*espace choriste*/
+/*
+/*karaoké*/
+.karaoke {
+  position: absolute;
+  top: 400px;
+  left: 50px;
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'écran est trop petit */
+  gap: 20px; /* Espace entre les vidéos */
+  justify-content: center; /* Centre les éléments horizontalement */
+  padding: 20px;
+}
+.karaoke ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+}
+.karaoke li {
+  list-style: none;
+}
+
+.karaoke img {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.karaoke img:hover {
+  transform: scale(1.1); /* Effet zoom au survol */
+}
+button.toggle-lyrics {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.toggle-lyrics:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+.lyrics,
+.translate,
+.phonetic {
+  display: none;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+button {
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 5px 10px;
+}
+
 @media screen and (max-width: 768px) {
+  header {
+    background-image: url(images/accueil.jpg);
+  }
   .burger {
     display: block; /* Affiche le burger */
     position: absolute;
@@ -177,6 +303,7 @@ h1 {
     flex-direction: column;
     display: none;
     padding: 20px;
+    z-index: 2;
   }
   #nav-links ul {
     flex-direction: column;
@@ -193,8 +320,33 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
   }
-
+  /*mep presentation*/
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  #wordCloud h3 {
+    top: 1000px;
+    left: 20px;
+  }
+  .wordCloud {
+    position: absolute;
+    top: 1200px;
+    left: 20px;
+    right: 20px;
+  }
   /*flipcard*/
+  .container {
+    top: 300px;
+    width: 350px;
+    height: 520px;
+  }
+
   .container:hover .card {
     transform: rotateY(180deg);
   }
